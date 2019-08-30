@@ -25,8 +25,16 @@ One service in the services directory
 
 To run this you will need Node JS with a version of at least 10. For the client, you will need to install Angular through npm. To do this, you will install the Angular Command Line Interface (CLI) globally with "npm install -g @angular/cli". You will also need to install the dependencies for both the webserver and the client. These dependenceis are defined in each project's respective package.json files. Go into each respective project's folder and install the dependencies with "npm isntall".
 
-You will need to log into Spotify using your credentials. In the client_secret.json file located in the webserver folder, you will write in your consumer key and secret:
+You will need to log into Spotify using your credentials. Create a client_secret.json file located in the webserver folder, you will write in your consumer key and secret:
 "{"
  "client_id": "Your Client Key",
  "client_secret": "Your Client Secret"
  "}"
+
+You will also need to create a tokens.json file in the webserver directory. This file will later be overwritten once an access and refresh token have been retrieved. It should follow as:
+"{"
+ "access_token": null,
+ "refresh_token": null
+ "}"
+ 
+ To run the Express webserver, go into the webserver folder and run "npm start". Be sure to have the dependencies installed first. To run the Angular client, go into the client folder and run "ng serve". Again, be sure to have the dependencies installed via "npm install".
